@@ -1,0 +1,417 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.invisible {
+	opacity: 0;
+}
+
+#infowindow {
+	width: auto;
+	min-width: 500px;
+	height: auto;
+	min-height: 150px;
+}
+
+#title {
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	font-weight: 700;
+	background-color: #002E6C;
+}
+
+#phone {
+	display: inline-block;
+}
+
+#industry, #size {
+	display: inline-block;
+}
+
+#description {
+	width: 70%;
+	position: relative;
+}
+
+#descriptionBottom {
+	position: absolute;
+	width: 80%;
+}
+
+#links {
+	width: 45%;
+	display: inline-block;
+	position: absolute;
+	float: left;
+	margin-right: 20px;
+}
+
+
+#attributes {
+	top: 0;
+	width: 50%;
+	float: right;
+	position: relative;
+}
+
+#companyLogo {
+	width: 20%;
+	height: auto;
+	float: right;
+	right: 0;
+	margin-right: 0;
+}
+
+
+#logo {
+	width: 100px;
+	height: auto;
+	background-size: contain;
+}
+
+
+
+.header {
+	width: 100%;
+	height: 6vh;
+	text-align: center;
+}
+.pageTitle {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 2vw;
+	color: white;
+	line-height: 50px;
+	background-color: #002E6C;
+}
+.location {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+}
+#locationContainer {
+	width: 100%;
+	min-width: 150px;
+	float: left;
+	margin-top: 20px;
+	position: relative;
+}
+#map {
+	width: 100%;
+	height: 95vh;
+	float: left;
+	position: relative;
+}
+
+#industry, #size, #phone, #address  {
+	font-size: 17px;
+}
+
+#industry span, #size span {
+	font-size: 15px;
+	font-weight: 400;
+}
+
+#companyLink, #jobLink {
+	text-decoration: none;
+	color: #002E6C;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.locationTab {
+	width: 90%;
+	margin-bottom: 5%;
+	margin-left: 10px;
+	position: relative;
+}
+.locationDescription {
+	width: 100%;
+	min-width: 100px;
+	height: 0px;
+}
+.show {
+	height: 100px;
+	animation: 0.5s slide-down ease;
+}
+.hide {
+	height: 0px;
+	animation: 0.5s slide-up ease;
+}
+.divText {
+	display: none;
+	animation: 1s slide-out-right ease; 
+}
+.showText {
+	padding-top: 10px;
+	padding-left: 20px;
+	display: all;
+	animation: 1s slide-right ease; 
+}
+.hideText {
+	padding-top: 10px;
+	padding-left: 20px;
+	animation: 0.5s slide-out-right ease; 
+}
+.variable,.value {
+    display: inline;
+    vertical-align: bottom;
+    font-family: 'Roboto', sans-serif;
+    color: #002E6C;
+    opacity: 0.7;
+}
+.variable {
+	font-weight: 400;
+	font-size: 15px;
+}
+.value {
+	font-weight: 200;
+	font-size: 17px;
+	padding-left: 10px;
+}
+
+.adminButton {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#signOutButton {
+	right: 50px;
+}
+
+.ripple {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(0, 46, 108, 0.1);
+  transform: scale(0);
+  position: absolute;
+  opacity: 1;
+}
+.rippleEffect {
+    animation: rippleDrop .4s linear;
+}
+
+@keyframes rippleDrop {
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+@keyframes slide-down {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 100px;
+  }
+}
+@keyframes slide-up {
+  from {
+    height: 100px;
+  }
+  to {
+    height: 0px;
+  }
+}
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+@keyframes slide-out-right {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: -150%;
+  }
+}
+div {
+    -webkit-transition: all .5s ease;
+       -moz-transition: all .5s ease;
+            transition: all .5s ease;
+}
+@media screen and (max-width: 750px) {
+    #map {
+    	width: 100%;
+    }
+    #locationContainer {
+    	width: 100%;
+    }
+    .show {
+    	height: auto;
+    }
+}
+
+ /* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: absolute; /* Stay in place */
+    z-index: 99999; /* Stay on top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #002E6C;
+
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: white;
+}
+
+.loginForm {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-size: 40px;
+}
+
+.textInput {
+	margin-left: 25px;
+	margin-bottom: 0;
+	background-color: white;
+	width: 300px;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	height: 40px;
+	top: 0;
+	margin-bottom: 20px;
+	margin-left: 25px;
+	color: #a2a2a2;
+	padding-left: 5px;
+}
+
+.loginField {
+	margin-left: 25px;
+}
+
+.submitButton {
+	text-decoration-color: none;
+	border: none;
+	margin-right: 5%;
+	float: right;
+	background-color: #FF4D4D;
+	width: 90px;
+	height: auto;
+	color: white;
+	font-size: 20px;
+	font-family: 'Oswald', sans-serif;
+	margin-top: 20px;
+}
+
+#addButton {
+	position: absolute;
+	bottom: 20px;
+	display: none;
+	width: 100px;
+	height: 20px;
+	border: none;
+	background-color: #002E6C;
+	color: white;
+	font-size: 15px;
+}
+
+.inputName {
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+}
+
+.inputValue {
+	background-color: #f3f3f3;
+	width: 300px;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	height: 40px;
+	color: #a2a2a2;
+	top: 0;
+	padding-left: 5px;
+}
+
+.inputForm {
+	display: -webkit-flex; /* Safari */
+    -webkit-align-items: flex-start; /* Safari 7.0+ */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #c4c4c4;
+}
+
+#addCompanyButton {
+	margin-top: 20px;
+	align-self: flex-end;
+	float: right;	
+	position: relative;
+}
+
+#lastInputForm {
+	border: none;
+	flex-direction: row;
+	align-content: flex-end;
+}
+
+#closeModal {
+	align-self: flex-end;
+	position: relative;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
